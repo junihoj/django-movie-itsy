@@ -1,0 +1,4 @@
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+RUN apk add libjpeg
+brew install libtiff libjpeg webp little-cms2
+celery -A proj worker -l INFO --pool-solo
