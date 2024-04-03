@@ -86,11 +86,11 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env("DB_NAME"), 
-        'USER': env("DB_USER"),
-        'PASSWORD': env("DB_PASSWORD"),
-        'HOST': env("DB_HOST"),
-        'PORT': env("DB_PORT"),
+        'NAME':  os.environ.get("DB_NAME", env("DB_NAME")), 
+        'USER': os.environ.get("DB_USER", env("DB_USER")),
+        'PASSWORD': os.environ.get("DB_PASSWORD", env("DB_PASSWORD")),
+        'HOST': os.environ.get("DB_HOST", env("DB_HOST")),
+        'PORT': os.environ.get("DB_PORT",env("DB_PORT"))
     }
 }
 
