@@ -13,7 +13,13 @@ RUN apt-get update \
     build-essential libpq-dev
 
 # RUN curl -sSL https://install.python-poetry.org | python3 - 
-
+# install python dependencies
+# COPY ./pyproject.toml .
+# COPY ./poetry.lock .
+# RUN /root/.local/bin/poetry install
+# EXPOSE 8000
+# RUN export PATH="$HOME/.local/bin:$PATH"
+# RUN source ~/.bashrc
 COPY poetry.lock pyproject.toml /usr/src/app/
 
 RUN pip3 install poetry
